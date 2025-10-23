@@ -4,6 +4,7 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -102,10 +103,10 @@
         layer_3 {
             display-name = "Fn";
             bindings = <
-&kp F1          &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                                       &kp C_VOLUME_UP                          &kp F7  &kp F8     &kp F9           &kp F10   &kp F11  &kp F12
-&bt BT_CLR_ALL  &none         &none         &none         &none         &none                  &kp C_BRIGHTNESS_DEC  &kp C_MUTE         &kp C_BRIGHTNESS_INC  &none   &mkp MCLK  &mkp MB4         &mkp MB5  &none    &none
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                          &kp C_VOLUME_DOWN                        &none   &none      &none            &none     &none    &none
-                                            &kp LGUI      &trans        &trans                                                                                &trans  &trans     &kp PRINTSCREEN
+&kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6                                          &kp C_VOLUME_UP                          &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12
+&bt BT_CLR_ALL  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD           &kp C_BRIGHTNESS_DEC  &kp C_MUTE         &kp C_BRIGHTNESS_INC  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD
+&bt BT_CLR      &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &none                          &kp C_VOLUME_DOWN                        &bl BL_TOG       &none            &none            &none            &none            &none
+                                                  &kp LGUI         &trans           &trans                                                                                   &trans           &trans           &kp PRINTSCREEN
             >;
 
             sensor-bindings = <&scroll_encoder>;
